@@ -14,10 +14,14 @@ import android.widget.TextView;
 
 import com.lqh.miao.R;
 import com.lqh.miao.net.entity.Status;
+import com.lqh.miao.ui.FillContent;
 
 import org.w3c.dom.Text;
 
 import java.util.ArrayList;
+
+import butterknife.BindView;
+import butterknife.ButterKnife;
 
 /**
  * Created by wenmingvs on 2015/12/29.
@@ -57,13 +61,17 @@ public class WeiboAdapter extends RecyclerView.Adapter<ViewHolder> {
     public void onBindViewHolder(ViewHolder holder, final int position) {
         if (holder instanceof OriginViewHolder) {
 //
-//            FillContent.fillTitleBar(mContext, mDatas.get(position), ((OriginViewHolder) holder).profile_img, ((OriginViewHolder) holder).profile_verified, ((OriginViewHolder) holder).profile_name, ((OriginViewHolder) holder).profile_time, ((OriginViewHolder) holder).weibo_comefrom);
+           FillContent.fillTitleBar(mContext, mDatas.get(position), ((OriginViewHolder) holder).profile_img, ((OriginViewHolder) holder).profile_verified, ((OriginViewHolder) holder).profile_name, ((OriginViewHolder) holder).profile_time, ((OriginViewHolder) holder).weiboComeFrom);
 //            FillContent.fillWeiBoContent(mDatas.get(position).text, mContext, ((OriginViewHolder) holder).weibo_content);
 //            FillContent.fillButtonBar(mContext, mDatas.get(position), ((OriginViewHolder) holder).bottombar_retweet, ((OriginViewHolder) holder).bottombar_comment, ((OriginViewHolder) holder).bottombar_attitude, ((OriginViewHolder) holder).comment, ((OriginViewHolder) holder).redirect, ((OriginViewHolder) holder).feedlike);
 //            FillContent.fillWeiBoImgList(mDatas.get(position), mContext, ((OriginViewHolder) holder).imageList);
 
             //微博背景的点击事件
             ((OriginViewHolder) holder).content.setText(mDatas.get(position).text);
+//            ((OriginViewHolder) holder).profile_name.setText(mDatas.get(position).user.name);
+//            ((OriginViewHolder) holder).profile_time.setText(mDatas.get(position).created_at);
+//            ((OriginViewHolder) holder).weiboComeFrom.setText(mDatas.get(position).source);
+          //  ((OriginViewHolder) holder).content.setText(mDatas.get(position).text);
             Log.i("chinamiao","adapter"+mDatas.get(position).text);
 
         }
@@ -108,12 +116,24 @@ public class WeiboAdapter extends RecyclerView.Adapter<ViewHolder> {
 //        public LinearLayout bottombar_retweet;
 //        public LinearLayout bottombar_comment;
 //        public LinearLayout bottombar_attitude;
-        public TextView content;
 
+
+        @BindView(R.id.weibo_item_content) TextView content;
+        @BindView(R.id.weibo_item_profile_name) TextView profile_name;
+        @BindView(R.id.weibo_item_image) RecyclerView image;
+        @BindView(R.id.weibo_item_profile_verified) ImageView profile_verified;
+    //    @BindView(R.id.weibo_item_retweet) TextView retweet;
+     //   @BindView(R.id.weibo_item_comment) TextView comment;
+        @BindView(R.id.weibo_item_profile_time) TextView profile_time;
+        @BindView(R.id.weibo_item_weiboComeFrom) TextView weiboComeFrom;
+        @BindView(R.id.weibo_item_profile_img)  ImageView profile_img;
+
+       // @Bind(R.id.job_title) TextView jobTitle;
         public OriginViewHolder(View v) {
             super(v);
+            ButterKnife.bind(this, v);
 
-            content = (TextView) v.findViewById(R.id.weibo_item_content);
+           // content = (TextView) v.findViewById(R.id.weibo_item_content);
         }
     }
 

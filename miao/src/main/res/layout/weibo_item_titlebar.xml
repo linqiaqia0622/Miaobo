@@ -44,7 +44,7 @@
                 android:layout_height="wrap_content">
 
                 <TextView
-                    android:id="@+id/profile_time"
+                    android:id="@+id/weibo_item_profile_time"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="16分钟前  "
@@ -52,7 +52,7 @@
                     android:textSize="@dimen/home_weiboitem_title_profile_time" />
 
                 <TextView
-                    android:id="@+id/weiboComeFrom"
+                    android:id="@+id/weibo_item_weiboComeFrom"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="来自 微博weibo.com"
@@ -60,5 +60,5 @@
                     android:textSize="@dimen/home_weiboitem_title_weibocomefrom" />
             </LinearLayout>
         </LinearLayout>
-<include layout="@layout/weibo_item_titlebar_share_part"/>.
+<include layout="@layout/weibo_item_titlebar_share_part"/>
     </LinearLayout>
