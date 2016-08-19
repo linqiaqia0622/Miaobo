@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <!-- 字体，颜色值 -->
+    <color name="text_black">#FF232723</color>
+    <color name="text_Grey">#bf2b2b2b</color>
+    <color name="text_light_Grey">#bf383838</color>
+    <color name="divider">#bf6c6c6c</color>
+    <!-- menu，颜色值 -->
+    <color name="popup_main_background">#b0000000</color>
+    <color name="black">#000000</color>
+    <color name="choose_eara_item_press_color">#f4f4f4</color>
+    <color name="white">#ffffffff</color>
+    <color name="no_color">#00000000</color>
+
+    <!--微博顶部TitleBar-->
+    <color name="home_weiboitem_title_profile_name">#f46200</color><!--发微博用户-->
+    <color name="home_weiboitem_title_profile_time">#828282</color><!--微博时间-->
+    <color name="home_weiboitem_title_weibocomefrom">#828282</color><!--微博来源-->
+
+    <!--原创微博内容区-->
+    <color name="home_original_weiboitem_font">#333333</color><!--微博内容中字体颜色-->
+    <color name="home_original_weiboitem_bg_normal">#ffffff</color><!--微博背景颜色-->
+    <color name="home_original_weiboitem_bg_pressed">#ffffff</color><!--微博背景颜色-->
+</resources>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (c) 2014. CodeBoyTeam
+  -->
+
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:orientation="horizontal">
+
+
+
+    <include layout="@layout/weibo_item_titlebar_profileimg" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="3dp"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/weibo_item_profile_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:maxLines="1"
+                    android:text="miao"
+                    android:textColor="@color/text_black"
+                    android:textSize="17dp" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/profile_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="16分钟前  "
+                    android:textColor="@color/home_weiboitem_title_weibocomefrom"
+                    android:textSize="@dimen/home_weiboitem_title_profile_time" />
+
+                <TextView
+                    android:id="@+id/weiboComeFrom"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="来自 微博weibo.com"
+                    android:textColor="@color/home_weiboitem_title_profile_time"
+                    android:textSize="@dimen/home_weiboitem_title_weibocomefrom" />
+            </LinearLayout>
+        </LinearLayout>
+<include layout="@layout/weibo_item_titlebar_share_part"/>.
+    </LinearLayout>
