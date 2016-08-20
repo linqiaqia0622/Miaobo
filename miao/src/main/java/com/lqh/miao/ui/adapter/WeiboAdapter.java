@@ -31,6 +31,7 @@ public class WeiboAdapter extends RecyclerView.Adapter<ViewHolder> {
     private static final int TYPE_ORINGIN_ITEM = 0;
     private static final int TYPE_RETWEET_ITEM = 3;
 
+    private static final int TYPE_FOOTER = 1;
     private ArrayList<Status> mDatas;
     private Context mContext;
     private View mView;
@@ -50,7 +51,11 @@ public class WeiboAdapter extends RecyclerView.Adapter<ViewHolder> {
      */
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-
+        if (viewType==TYPE_FOOTER){
+            mView = LayoutInflater.from(mContext).inflate(R.layout.weibo_list_footer, parent, false);
+            Footer footer = new Footer(mView);
+            return footer;
+        }
             mView = LayoutInflater.from(mContext).inflate(R.layout.weibo_item, parent, false);
             OriginViewHolder originViewHolder = new OriginViewHolder(mView);
             return originViewHolder;
@@ -81,7 +86,7 @@ public class WeiboAdapter extends RecyclerView.Adapter<ViewHolder> {
     @Override
     public int getItemCount() {
         if (mDatas != null) {
-            return mDatas.size();
+            return mDatas.size()+1;
         } else {
             return 0;
         }
@@ -90,6 +95,9 @@ public class WeiboAdapter extends RecyclerView.Adapter<ViewHolder> {
 
     @Override
     public int getItemViewType(int position) {
+        if(position==mDatas.size()){
+            return  TYPE_FOOTER;
+        }
         if (mDatas.get(position).retweeted_status != null && mDatas.get(position).retweeted_status.user != null) {
             return TYPE_RETWEET_ITEM;
         } else {
@@ -100,7 +108,12 @@ public class WeiboAdapter extends RecyclerView.Adapter<ViewHolder> {
     public void setData(ArrayList<Status> data) {
         this.mDatas = data;
     }
+    public static class Footer extends  ViewHolder{
+        public Footer(View itemView) {
+            super(itemView);
 
+        }
+    }
     public static class OriginViewHolder extends ViewHolder {
 //        public LinearLayout origin_weibo_layout;
 //        public ImageView profile_img;
